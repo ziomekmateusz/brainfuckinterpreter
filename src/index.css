@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-bg: #0e1014;
+  --color-panel: #161a21;
+  --color-cell: #12151b;
+  --color-border: #2f3642;
+  --color-text: #e6e8eb;
+  --color-muted: #9aa3b2;
+  --color-accent: #f2b134;
+  --color-on-accent: #0e1014;
+  --color-written: #6cb6ff;
+  --color-bracket: #c8a8ff;
+  --color-error: #ff7b72;
+  --color-done: #7ee787;
+}
+
+:root[data-theme="light"] {
+  --color-bg: #f6f7f9;
+  --color-panel: #ffffff;
+  --color-cell: #f1f3f6;
+  --color-border: #c9cfd8;
+  --color-text: #1b1f24;
+  --color-muted: #57606a;
+  --color-accent: #875a00;
+  --color-on-accent: #ffffff;
+  --color-written: #0969da;
+  --color-bracket: #8250df;
+  --color-error: #cf222e;
+  --color-done: #1a7f37;
+}
+
+:root {
+  color-scheme: dark;
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-written);
+  outline-offset: 2px;
+}
+
+input[type="range"] {
+  accent-color: var(--color-accent);
+}
